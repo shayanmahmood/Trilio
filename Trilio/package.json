@@ -1,0 +1,28 @@
+{
+  "name": "trilio",
+  "version": "1.0.0",
+  "description": "book all in one ",
+  "main": "index.js",
+  "scripts": {
+    "watch:sass": "node-sass sass/main.scss css/style.css -w",
+    "devserver": "live-server",
+    "start": "npm-run-all --parallel devserver watch:sass",
+    "compile:sass": "node-sass sass/main.css style/comp.css",
+    "prefix:css": "postcss --use autoprefixer -b'last 10 version' css/style.comp.css -o css/style.prfix.css",
+    "compress:css": "node-sass css/style.prefix.css --output-style compresse",
+    "build:css": "npm-run-all compile:sass prefix:css compress:css",
+    "animation": "npm run animation.css"
+  },
+  "author": "shayan",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {
+    "animation.css": "^0.1.0",
+    "autoprefixer": "^10.2.6",
+    "concat": "^1.0.3",
+    "node-sass": "^6.0.0",
+    "npm-run-all": "^4.1.5",
+    "postcss": "^8.3.4",
+    "postcss-cli": "^8.3.1"
+  }
+}
